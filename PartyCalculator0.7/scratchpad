@@ -1,0 +1,18 @@
+refactor the party classes so the basic methods are not over-ridden but the constants are overridden
+	pro: less repetitive code (methods are in super)
+	con: maybe less flexibility if some methods should not do anything
+
+have to put code in to check for 0
+	     
+make the keyboard disappear when using the seekbar
+
+UI design
+
+add preferences for:
+   "heaviness" of the party
+   take current weather into account
+   
+
+add the logic and a selection for party type
+
+	    

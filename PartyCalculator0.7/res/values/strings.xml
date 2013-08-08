@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Party Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lblMaleGuests">How many male guests?</string>
+    <string name="lblFemaleGuests">How many female guests?</string>
+    <string name="lblPartyLen">Party length</string>
+    <string name="btnCalculate">Calculate!</string>
+    <string name="lblHours">hours</string>
+    <string name="title_activity_party_calculator_result">PartyCalculatorResult</string>
+    <string name="intro_text">The party calculator will work out how much drink and food to buy for your party. Use the menu to change the party type.</string>
+    <string name="sel_party_type">Change party type</string>
+    <string name="choices_title">Select party type</string>
+    <string-array name="party_types">
+        <item>Apero</item>
+        <item>BBQ Party</item>
+        <item>Fondue Party</item>
+    </string-array>
+        <string name="lbl_reset">Reset</string>
+
+</resources>
