@@ -33,7 +33,8 @@ public class Main extends Activity {
 	Button calculateButton;
 	
 	SeekBar partyLengthSeekBar;
-		
+		// just messin around
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

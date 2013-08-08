@@ -67,6 +67,7 @@ public final class R {
         public static final int lblHours=0x7f050007;
         public static final int lblMaleGuests=0x7f050003;
         public static final int lblPartyLen=0x7f050005;
+        public static final int lbl_reset=0x7f05000c;
         public static final int sel_party_type=0x7f05000a;
         public static final int title_activity_party_calculator_result=0x7f050008;
     }
