@@ -2,12 +2,14 @@ package net.anguslong.partycalculator;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import net.anguslong.partycalculator.model.*;
 
 public class PartyCalculatorResult extends Activity {
 
+	public static final String TAG = "PartyCalculatorResult";
 	int numberOfMaleGuests;
 	int numberOfFemaleGuests;
 	int partyLength;
@@ -62,8 +64,11 @@ public class PartyCalculatorResult extends Activity {
 		// get the partyType from the Application "global" variable
 		int partyType = ((PartyCalculatorApplication)getApplication()).getPartyType();
 
-		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, numberOfFemaleGuests);
-
+		// hard coded intensity for now TODO
+		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, numberOfFemaleGuests, Party.MID_INTENSITY);
+		
+		Log.d(TAG, "Created party of type: " + party.toString());
+		
 		party.calculateParty();
 		// replace the text with the results
 		beerResultTextView.setText(String.valueOf(party.getBeers()) + " cans");

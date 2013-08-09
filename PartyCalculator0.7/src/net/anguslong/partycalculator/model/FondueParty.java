@@ -4,7 +4,7 @@ public class FondueParty extends Party {
 	
 	private static final double BEER_FACTOR = 0; // no beer at a fondue party
 	private static final double REDWINE_FACTOR = 0; // no red wine at a fondue party
-	private static final double WHITEWINE_FACTOR = 0.07;
+	private static final double WHITEWINE_FACTOR = 0.7;
 	
 	
 	public FondueParty (int duration, int numMale, int numFemale, double intensity) {
@@ -18,13 +18,21 @@ public class FondueParty extends Party {
 	@Override
 	public void calcBeers() {
 		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
-		
+		if (temp > 1) {
+			beers = temp;
+		} else {
+			beers = 0;
+		}
 	}
 
 	@Override
 	public void calcRedWine() {
 		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
-
+		if (temp > 1) {
+			redWine = temp;
+		} else {
+			redWine = 0;
+		}
 	}
 
 	@Override
@@ -35,6 +43,10 @@ public class FondueParty extends Party {
 		} else {
 			whiteWine = 1;
 		}
+	}
+	
+	public String toString() {
+		return "Fondue";
 	}
 
 }

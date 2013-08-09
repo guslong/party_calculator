@@ -7,9 +7,9 @@ public class PartyFactory {
 		case Party.APERO:
 			return new Apero(duration, male, female, intensity);
 		case Party.BBQ_PARTY:
-			return new BBQParty(duration, male, female); // TODO intensity
+			return new BBQParty(duration, male, female, intensity); // TODO intensity
 		case Party.FONDUE_PARTY:
-			return new FondueParty(duration, male, female); // TODO intensity
+			return new FondueParty(duration, male, female, intensity); // TODO intensity
 		default:
 			return null;
 		}

@@ -49,5 +49,8 @@ public class BBQParty extends Party {
 			whiteWine = 1;
 		}
 	}
+	public String toString() {
+		return "BBQ";
+	}
 
 }

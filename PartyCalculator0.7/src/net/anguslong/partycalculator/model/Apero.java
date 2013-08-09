@@ -43,5 +43,9 @@ public class Apero extends Party {
 			whiteWine = 1;
 		}
 	}
+	
+	public String toString() {
+		return "Apero";
+	}
 
 }

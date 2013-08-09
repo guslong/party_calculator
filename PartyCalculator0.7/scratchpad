@@ -16,3 +16,10 @@ better coupling between party types???
 
 change the party methods to have return types rather than void with side-effects??
 
+show the party type on the main activity screen
+
+debug fondue party - it is showing 0 , 0 , 0 regardless of the input
+	it is instantiating the right classes
+
+
+
