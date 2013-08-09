@@ -7,27 +7,34 @@ public class FondueParty extends Party {
 	private static final double WHITEWINE_FACTOR = 0.07;
 	
 	
-	public FondueParty (int duration, int numMale, int numFemale) {
+	public FondueParty (int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
 		this.numberOfMaleGuests = numMale;
 		this.numberOfFemaleGuests = numFemale;
 		this.numberOfGuests = numberOfFemaleGuests + numberOfMaleGuests;
+		this.intensity = intensity;
 	}
 	
 	@Override
 	public void calcBeers() {
-		beers = (int) (numberOfMaleGuests * BEER_FACTOR * getPartyLength());
+		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
+		
 	}
 
 	@Override
 	public void calcRedWine() {
-		redWine = (int) (numberOfFemaleGuests * REDWINE_FACTOR * getPartyLength());
+		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
+
 	}
 
 	@Override
-	// for a fondue party we calculate white wine based on the total number of guests
 	public void calcWhiteWine() {
-		whiteWine = (int) (numberOfGuests * WHITEWINE_FACTOR * getPartyLength());
+		int temp = (int) (numberOfFemaleGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
+		if (temp > 1) {
+			whiteWine = temp;
+		} else {
+			whiteWine = 1;
+		}
 	}
 
 }

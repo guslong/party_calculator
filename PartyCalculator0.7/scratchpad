@@ -12,4 +12,7 @@ add food suggestions for each party type
 	a) simple food suggestions at first
 	b) complex food suggestions based on number of people
 
-better coupling between party types
+better coupling between party types???
+
+change the party methods to have return types rather than void with side-effects??
+
