@@ -1,18 +1,12 @@
-refactor the party classes so the basic methods are not over-ridden but the constants are overridden
-	pro: less repetitive code (methods are in super)
-	con: maybe less flexibility if some methods should not do anything
-
-have to put code in to check for 0
-	     
-make the keyboard disappear when using the seekbar
-
-UI design
 
 add preferences for:
    "heaviness" of the party
-   take current weather into account
-   
+   other factors
 
-add the logic and a selection for party type
+take current weather into account
 
-	    
+add food suggestions for each party type
+	a) simple food suggestions at first
+	b) complex food suggestions based on number of people
+
+better coupling between party types

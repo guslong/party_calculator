@@ -1,10 +1,11 @@
 package net.anguslong.partycalculator;
 
+import net.anguslong.partycalculator.model.Party;
 import android.app.Application;
 
 public class PartyCalculatorApplication extends Application {
 
-	private int partyType = 1; // stores the type of party, initialised to 1
+	private int partyType = Party.APERO;
 	
 	
 	public int getPartyType() {
@@ -17,7 +18,7 @@ public class PartyCalculatorApplication extends Application {
 
 	@Override
 	public void onCreate() {
-		// TODO Auto-generated method stub
+
 		super.onCreate();
 	}
 	

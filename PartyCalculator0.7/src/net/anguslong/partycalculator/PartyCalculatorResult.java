@@ -46,17 +46,16 @@ public class PartyCalculatorResult extends Activity {
 			partyLength = 1;
 		}
 		
+		displayResults();
+		
+	}
+
+
+	private void displayResults() {
 		// get references to the textview fields that need to be updated
 		beerResultTextView = (TextView)findViewById(R.id.beerResultTextView);
 		redWineResultTextView = (TextView) findViewById(R.id.redWineResultTextView);
 		whiteWineResultTextView = (TextView) findViewById(R.id.whiteWineResultTextView);
-
-		/*
-		 * call the party factory 1 = BBQParty is hard coded for now(no dynamic
-		 * changing of party types for now)
-		 */
-
-	
 
 		PartyFactory factory = new PartyFactory();
 		
@@ -72,7 +71,6 @@ public class PartyCalculatorResult extends Activity {
 				+ " bottles");
 		whiteWineResultTextView.setText(String.valueOf(party.getWhiteWine())
 				+ " bottles");
-		
 	}
 
 

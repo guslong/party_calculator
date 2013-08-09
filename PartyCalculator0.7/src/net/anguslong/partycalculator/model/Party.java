@@ -2,11 +2,15 @@ package net.anguslong.partycalculator.model;
 
 public abstract class Party {
 
+	// constants for the party types: note, must keep in order with the strings.xml array
+	public static final int APERO = 1;
+	public static final int BBQ_PARTY = 2;
+	public static final int FONDUE_PARTY = 3;
+	
 	protected int partyLength;
 	protected int numberOfMaleGuests;
 	protected int numberOfFemaleGuests;
 	protected int numberOfGuests;
-
 
 	protected int beers;
 	protected int redWine;
