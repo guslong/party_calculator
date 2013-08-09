@@ -7,6 +7,12 @@ public abstract class Party {
 	public static final int BBQ_PARTY = 2;
 	public static final int FONDUE_PARTY = 3;
 	
+	// constants for intensity
+	public static final double LOW_INTENSITY = 0.7;
+	public static final double MID_INTENSITY = 1;
+	public static final double HIGH_INTENSITY = 1.3;
+	
+	protected double intensity;
 	protected int partyLength;
 	protected int numberOfMaleGuests;
 	protected int numberOfFemaleGuests;

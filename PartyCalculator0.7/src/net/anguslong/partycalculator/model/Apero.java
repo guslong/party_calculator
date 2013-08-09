@@ -5,17 +5,18 @@ public class Apero extends Party {
 	private static final double BEER_FACTOR = 0.25; 
 	private static final double REDWINE_FACTOR = 0.3; 
 	private static final double WHITEWINE_FACTOR = 0.3;
-	
-	public Apero(int duration, int numMale, int numFemale) {
+		
+	public Apero(int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
 		this.numberOfMaleGuests = numMale;
 		this.numberOfFemaleGuests = numFemale;
 		this.numberOfGuests = numberOfFemaleGuests + numberOfMaleGuests;
+		this.intensity = intensity;
 	}
 
 	@Override
 	public void calcBeers() {
-		int temp = (int) (numberOfMaleGuests * BEER_FACTOR * getPartyLength());
+		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
 		if (temp > 1) {
 			beers = temp;
 		} else {
@@ -25,7 +26,7 @@ public class Apero extends Party {
 
 	@Override
 	public void calcRedWine() {
-		int temp = (int) (numberOfFemaleGuests * REDWINE_FACTOR * getPartyLength());
+		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
 			redWine = temp;
 		} else {
@@ -35,7 +36,7 @@ public class Apero extends Party {
 
 	@Override
 	public void calcWhiteWine() {
-		int temp = (int) (numberOfFemaleGuests * WHITEWINE_FACTOR * getPartyLength());
+		int temp = (int) (numberOfFemaleGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
 			whiteWine = temp;
 		} else {

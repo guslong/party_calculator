@@ -1,7 +1,10 @@
 
 add preferences for:
-   "heaviness" of the party
-   other factors
+   "intensity" of the party
+   		refactor BBQParty
+   		refactor FondueParty
+   		
+other factors
 
 take current weather into account
 
