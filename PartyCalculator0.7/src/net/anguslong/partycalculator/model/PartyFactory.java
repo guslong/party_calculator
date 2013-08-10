@@ -10,6 +10,8 @@ public class PartyFactory {
 			return new BBQParty(duration, male, female, intensity); 
 		case Party.FONDUE_PARTY:
 			return new FondueParty(duration, male, female, intensity); 
+		case Party.DINNER_PARTY:
+			return new FondueParty(duration, male, female, intensity); 
 		default:
 			return null;
 		}

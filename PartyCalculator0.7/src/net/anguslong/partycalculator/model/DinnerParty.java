@@ -1,43 +1,47 @@
 package net.anguslong.partycalculator.model;
 
-public class FondueParty extends Party {
-	
-	private static final double BEER_FACTOR = 0; // no beer at a fondue party
-	private static final double REDWINE_FACTOR = 0; // no red wine at a fondue party
-	private static final double WHITEWINE_FACTOR = 0.5;
+public class DinnerParty extends Party {
 	
 	
-	public FondueParty (int duration, int numMale, int numFemale, double intensity) {
+	private static final double BEER_FACTOR = 0; // posh dinner parties have no beer
+	private static final double REDWINE_FACTOR = .6; //  but lots of red wine
+	private static final double WHITEWINE_FACTOR = 0.07;
+	
+	// disabled in this version:
+	//private static final double JUICE_FACTOR = 0.5;
+	//private static final double MEAT_FACTOR = 150.0;
+	//private static final double BREAD_FACTOR = 0.5;
+	
+	public DinnerParty(int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
 		this.numberOfMaleGuests = numMale;
 		this.numberOfFemaleGuests = numFemale;
 		this.numberOfGuests = numberOfFemaleGuests + numberOfMaleGuests;
 		this.intensity = intensity;
 	}
-	
+
 	@Override
 	public void calcBeers() {
 		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
 		if (temp > 1) {
 			beers = temp;
 		} else {
-			beers = 0;
+			beers = 1;
 		}
 	}
 
 	@Override
 	public void calcRedWine() {
-		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
+		int temp = (int) (numberOfGuests * intensity * REDWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
 			redWine = temp;
 		} else {
-			redWine = 0;
+			redWine = 1;
 		}
 	}
 
 	@Override
 	public void calcWhiteWine() {
-		// in a fondue party, both male and female drink white wine at a rate of 2 glasses per hour each
 		int temp = (int) (numberOfGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
 			whiteWine = temp;
@@ -45,9 +49,8 @@ public class FondueParty extends Party {
 			whiteWine = 1;
 		}
 	}
-	
 	public String toString() {
-		return "Fondue";
+		return "Dinner Party";
 	}
 
 }

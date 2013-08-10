@@ -6,6 +6,7 @@ public abstract class Party {
 	public static final int APERO = 1;
 	public static final int BBQ_PARTY = 2;
 	public static final int FONDUE_PARTY = 3;
+	public static final int DINNER_PARTY = 4;
 	
 	// constants for intensity
 	public static final double LOW_INTENSITY = 0.7;
