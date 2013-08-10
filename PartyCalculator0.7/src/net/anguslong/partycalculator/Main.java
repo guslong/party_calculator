@@ -55,6 +55,7 @@ public class Main extends Activity {
 					@Override
 					public void onProgressChanged(SeekBar seekBar,
 							int progress, boolean fromUser) {
+						// seek bar allows up to 5 on the scale
 						Integer partyLength = (seekBar.getProgress() / 20 < 1) ? 1
 								: (seekBar.getProgress() / 20);
 						partyLengthEditText.setText(partyLength.toString());
