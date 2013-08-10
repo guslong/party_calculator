@@ -10,7 +10,7 @@ import net.anguslong.partycalculator.model.*;
 
 public class PartyCalculatorResult extends Activity {
 
-	public static final String TAG = "PartyCalculatorResult";
+	static final String TAG = "Party Calculator";
 	int numberOfMaleGuests;
 	int numberOfFemaleGuests;
 	int partyLength;
@@ -65,14 +65,15 @@ public class PartyCalculatorResult extends Activity {
 		// get the partyType from the Application "global" variable
 		int partyType = ((PartyCalculatorApplication)getApplication()).getPartyType();
 
-		// TODO get the intensity from the preferences
-		// this should be set in the application class
+		// get the intensity from the preferences
+		double intensity = ((PartyCalculatorApplication)getApplication()).getIntensity();
 		
-		// hard coded intensity for now
 		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, 
-				numberOfFemaleGuests, Party.MID_INTENSITY);
+				numberOfFemaleGuests, intensity);
 		
 		Log.d(TAG, "Created party of type: " + party.toString());
+		Log.d(TAG, "Party intensity: " + party.getIntensity());
+		
 		
 		party.calculateParty();
 		// replace the text with the results

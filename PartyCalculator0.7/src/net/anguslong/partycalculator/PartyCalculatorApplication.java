@@ -9,11 +9,11 @@ import android.util.Log;
 
 public class PartyCalculatorApplication extends Application implements OnSharedPreferenceChangeListener {
 
-	static final String TAG = "YambaApp";
+	static final String TAG = "Party Calculator";
 	private int partyType = Party.APERO;
-	private double intensity = Party.MID_INTENSITY;
+	private double intensity = 1;
 	SharedPreferences prefs;
-
+	String intensity_pref;
 	
 	public int getPartyType() {
 		return partyType;
@@ -29,36 +29,41 @@ public class PartyCalculatorApplication extends Application implements OnSharedP
 
 	public void setIntensity() {
 		
-		//this.intensity = intensity;
-		
-		// get the intensity value, default to 1
-		String intensity_str = prefs.getString("party_intensity", "1");
-		
-		// parse the string to double
-		try {
-			intensity = Double.parseDouble(intensity_str);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Log.d(TAG, "intensity is set to: " + intensity_str );
-		
+		// get the intensity value, default to error
+				
 	}
 
 	@Override
 	public void onCreate() {
-
 		super.onCreate();
-		
 		// get the values from preferences
+		getPrefs();
+	}
+
+	private void getPrefs() {
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
+		
+		//  TODO this is not working getting the preference value
+		String intensity_pref = prefs.getString("party_intensity", "error");
+		Log.d(TAG, "logging string intensity_pref: " + intensity_pref);
+		
+		try {
+			intensity = Double.parseDouble(intensity_pref);
+			Log.d(TAG, "successfully parsed the prefs value to double");
+		} catch (NumberFormatException e) {
+			intensity = 1;
+			Log.d(TAG, "NumberFormatException caused by setIntensity method in PartyCalculatorApplication"  );
+		}
+		Log.d(TAG, "intensity is set to: " + intensity);
+
 	}
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
-		setIntensity();
+
+		getPrefs();
 		Log.d(TAG, "sharedPreferences changed");
 		
 	}

@@ -6,6 +6,8 @@ import android.preference.PreferenceFragment;
 
 public class PrefsActivity extends Activity {
 
+	static final String TAG = "Party Calculator";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

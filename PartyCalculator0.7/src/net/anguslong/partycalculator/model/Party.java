@@ -81,6 +81,10 @@ public abstract class Party {
 	public int getWhiteWine() {
 		return whiteWine;
 	}
+
+	public double getIntensity() {
+		return intensity;
+	}
 	
 	
 }
