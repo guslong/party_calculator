@@ -25,15 +25,5 @@
     <string name="lbl_intensity_pref">Party Intensity</string>
     <string name="intensity_summary">How hard are you going to party?</string>
 
-    <string-array name="party_intensity">
-        <item>Like Mother Theresa</item>
-        <item>Like a Swiss person</item>
-        <item>Like an English person</item>
-    </string-array>
-    <string-array name="intensity_vals"> <!-- the values to be use in the intensity preference -->
-        <item>0.7</item>
-        <item>1</item>
-        <item>1.3</item>
-    </string-array>
 
 </resources>

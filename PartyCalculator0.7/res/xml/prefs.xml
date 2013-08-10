@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <ListPreference
-        android:entries="@array/party_intensity"
-        android:entryValues="@array/intensity_vals"
-        android:key="intensity"
-        android:summary="@string/intensity_summary"
-        android:title="@string/lbl_intensity_pref" />
+    <EditTextPreference android:title="@string/lbl_intensity_pref" android:key="edit_text_intensity" android:summary="@string/intensity_summary"/>
 
 </PreferenceScreen>
