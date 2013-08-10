@@ -9,6 +9,8 @@ package net.anguslong.partycalculator;
 
 public final class R {
     public static final class array {
+        public static final int intensity_key=0x7f070001;
+        public static final int intensity_val=0x7f070002;
         public static final int party_types=0x7f070000;
     }
     public static final class attr {
@@ -63,6 +65,7 @@ public final class R {
         public static final int btnCalculate=0x7f060007;
         public static final int choices_title=0x7f06000c;
         public static final int hello_world=0x7f060003;
+        public static final int intensity_pref_key=0x7f060010;
         public static final int intensity_summary=0x7f06000f;
         public static final int intro_text=0x7f06000a;
         public static final int lblFemaleGuests=0x7f060005;

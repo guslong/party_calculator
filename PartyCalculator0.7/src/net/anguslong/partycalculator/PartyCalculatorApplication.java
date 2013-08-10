@@ -27,7 +27,7 @@ public class PartyCalculatorApplication extends Application implements
 		prefs.registerOnSharedPreferenceChangeListener(this);
 
 		// TODO this is not working . getting the preference value
-		String intensity_pref = prefs.getString("edit_text_intensity", "error");
+		String intensity_pref = prefs.getString("intensity_pref_key", "error");
 
 		Log.d(TAG, "logging string intensity_pref: " + intensity_pref);
 
