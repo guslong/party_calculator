@@ -1,21 +1,20 @@
-NEXT UP
-add preferences for:
-   "intensity" of the party
-   initially get it working with a text field (as in lesson 15)
-   then make it a preferences list (lesson 16) with only three options -  do they need to be in the model at all?
-	
-   		
+
    		
 OTHER TO DO
 take current weather into account
+
 
 add food suggestions for each party type
 	a) simple food suggestions at first
 	b) complex food suggestions based on number of people
 
-better coupling between party types???
+
+better coupling between party types / less duplication of code
+	refactor with Strategy Pattern? (exchange algortyhms at runtime)
+
 
 change the party methods to have return types rather than void with side-effects??
   simplify the methods in fondue party also as beer and redwine methods simply return 0
+  
   
 show the party type on the main activity screen

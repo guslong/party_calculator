@@ -25,21 +25,7 @@ public class PartyCalculatorApplication extends Application implements
 	private void getPrefs() {
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
-
-		// TODO this is not working . getting the preference value
-		String intensity_pref = prefs.getString("intensity_pref_key", "error");
-
-		Log.d(TAG, "logging string intensity_pref: " + intensity_pref);
-
-		try {
-			intensity = Double.parseDouble(intensity_pref);
-			Log.d(TAG, "successfully parsed the prefs value to double");
-		} catch (NumberFormatException e) {
-			intensity = 1;
-			Log.d(TAG,
-					"NumberFormatException caused by setIntensity method in PartyCalculatorApplication");
-		}
-		Log.d(TAG, "intensity is set to: " + intensity);
+		setIntensity();
 
 	}
 
@@ -66,8 +52,19 @@ public class PartyCalculatorApplication extends Application implements
 
 	public void setIntensity() {
 
-		// get the intensity value, default to error
+		String intensity_pref = prefs.getString("intensity_pref_key", "error");
 
+		Log.d(TAG, "logging string intensity_pref: " + intensity_pref);
+
+		try {
+			intensity = Double.parseDouble(intensity_pref);
+			Log.d(TAG, "successfully parsed the prefs value to double");
+		} catch (NumberFormatException e) {
+			intensity = 1;
+			Log.d(TAG,
+					"NumberFormatException caused by setIntensity method in PartyCalculatorApplication");
+		}
+		Log.d(TAG, "intensity is set to: " + intensity);
 	}
 
 }

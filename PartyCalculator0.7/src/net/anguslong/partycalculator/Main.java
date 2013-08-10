@@ -55,8 +55,8 @@ public class Main extends Activity {
 					@Override
 					public void onProgressChanged(SeekBar seekBar,
 							int progress, boolean fromUser) {
-						Integer partyLength = (seekBar.getProgress() / 10 < 1) ? 1
-								: (seekBar.getProgress() / 10);
+						Integer partyLength = (seekBar.getProgress() / 20 < 1) ? 1
+								: (seekBar.getProgress() / 20);
 						partyLengthEditText.setText(partyLength.toString());
 					}
 

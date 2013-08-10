@@ -4,8 +4,8 @@ public class DinnerParty extends Party {
 	
 	
 	private static final double BEER_FACTOR = 0; // posh dinner parties have no beer
-	private static final double REDWINE_FACTOR = .6; //  but lots of red wine
-	private static final double WHITEWINE_FACTOR = 0.07;
+	private static final double REDWINE_FACTOR = 0.66; //  but lots of red wine
+	private static final double WHITEWINE_FACTOR = 0.1; // someone always has the fish, or white with the starter
 	
 	// disabled in this version:
 	//private static final double JUICE_FACTOR = 0.5;
@@ -22,12 +22,9 @@ public class DinnerParty extends Party {
 
 	@Override
 	public void calcBeers() {
-		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
-		if (temp > 1) {
-			beers = temp;
-		} else {
-			beers = 1;
-		}
+		
+			beers = 0;
+		
 	}
 
 	@Override
@@ -49,6 +46,7 @@ public class DinnerParty extends Party {
 			whiteWine = 1;
 		}
 	}
+	
 	public String toString() {
 		return "Dinner Party";
 	}
