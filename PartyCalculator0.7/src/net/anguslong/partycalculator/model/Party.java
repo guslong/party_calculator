@@ -31,6 +31,7 @@ public abstract class Party {
 	}
 	
 	// abstract algorithms to be overridden by subclasses
+	// TODO change these into methods with return values rather than void with side-effects
 	abstract void calcBeers();
 	abstract void calcRedWine();
 	abstract void calcWhiteWine();

@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="13"
         android:targetSdkVersion="17" />
- 
+
     <application
         android:name="net.anguslong.partycalculator.PartyCalculatorApplication"
         android:allowBackup="true"
@@ -23,9 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="net.anguslong.partycalculator.PartyCalculatorResult">
-            
+        <activity android:name="net.anguslong.partycalculator.PartyCalculatorResult" >
+        </activity>
+        <activity android:name="net.anguslong.partycalculator.PrefsActivity" >
         </activity>
     </application>
 

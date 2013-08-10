@@ -1,5 +1,6 @@
 package net.anguslong.partycalculator;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -115,6 +116,8 @@ public class Main extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
+		Intent intentPrefs = new Intent(Main.this, PrefsActivity.class);
+		
 		switch (item.getItemId()) {
 		case R.id.sel_party_type:
 			// launch a AlertDialog with the party type choices
@@ -122,6 +125,9 @@ public class Main extends Activity {
 			return true;
 		case R.id.sel_reset:
 			resetInput();
+			return true;
+		case R.id.sel_settings:
+		   startActivity(intentPrefs);
 			return true;
 		default:
 			return false;
@@ -179,7 +185,8 @@ public class Main extends Activity {
 
 			// when the button is clicked, go to the Result Activity
 			Intent submit = new Intent(Main.this, PartyCalculatorResult.class);
-
+			
+			
 			// put the values from the fields into the extra bundle
 			submit.putExtra("male", maleGuestsEditText.getText().toString());
 			submit.putExtra("female", femaleGuestsEditText.getText().toString());

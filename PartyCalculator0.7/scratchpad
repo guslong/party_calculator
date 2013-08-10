@@ -1,11 +1,12 @@
-
+NEXT UP
 add preferences for:
    "intensity" of the party
-   		refactor BBQParty
-   		refactor FondueParty
+   initially get it working with a text field (as in lesson 15)
+   then make it a preferences list (lesson 16) with only three options -  do they need to be in the model at all?
+	
    		
-other factors
-
+   		
+OTHER TO DO
 take current weather into account
 
 add food suggestions for each party type
@@ -15,11 +16,6 @@ add food suggestions for each party type
 better coupling between party types???
 
 change the party methods to have return types rather than void with side-effects??
-
+  simplify the methods in fondue party also as beer and redwine methods simply return 0
+  
 show the party type on the main activity screen
-
-debug fondue party - it is showing 0 , 0 , 0 regardless of the input
-	it is instantiating the right classes
-
-
-

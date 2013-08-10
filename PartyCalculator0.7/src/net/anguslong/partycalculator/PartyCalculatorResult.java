@@ -1,6 +1,7 @@
 package net.anguslong.partycalculator;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
@@ -64,8 +65,12 @@ public class PartyCalculatorResult extends Activity {
 		// get the partyType from the Application "global" variable
 		int partyType = ((PartyCalculatorApplication)getApplication()).getPartyType();
 
-		// hard coded intensity for now TODO
-		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, numberOfFemaleGuests, Party.MID_INTENSITY);
+		// TODO get the intensity from the preferences
+		// this should be set in the application class
+		
+		// hard coded intensity for now
+		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, 
+				numberOfFemaleGuests, Party.MID_INTENSITY);
 		
 		Log.d(TAG, "Created party of type: " + party.toString());
 		
