@@ -1,11 +1,11 @@
 package net.anguslong.partycalculator.model;
 
 public class Apero extends Party {
-	
-	private static final double BEER_FACTOR = 1; 
-	private static final double REDWINE_FACTOR = 0.3; 
+
+	private static final double BEER_FACTOR = 1;
+	private static final double REDWINE_FACTOR = 0.3;
 	private static final double WHITEWINE_FACTOR = 0.3;
-		
+
 	public Apero(int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
 		this.numberOfMaleGuests = numMale;
@@ -14,36 +14,33 @@ public class Apero extends Party {
 		this.intensity = intensity;
 	}
 
-	@Override
-	public void calcBeers() {
+	public int getBeers() {
 		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
 		if (temp > 1) {
-			beers = temp;
+			return temp;
 		} else {
-			beers = 1;
+			return 1;
 		}
 	}
 
-	@Override
-	public void calcRedWine() {
+	public int getRedWine() {
 		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
-			redWine = temp;
+			return temp;
 		} else {
-			redWine = 1;
+			return 1;
 		}
 	}
 
-	@Override
-	public void calcWhiteWine() {
+	public int getWhiteWine() {
 		int temp = (int) (numberOfFemaleGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
-			whiteWine = temp;
+			return temp;
 		} else {
-			whiteWine = 1;
+			return 1;
 		}
 	}
-	
+
 	public String toString() {
 		return "Apero";
 	}

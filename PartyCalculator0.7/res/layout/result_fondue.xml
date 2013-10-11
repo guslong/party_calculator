@@ -5,7 +5,7 @@
     android:layout_marginLeft="14dp"
     android:layout_marginTop="14dp"
     android:columnCount="2"
-    android:rowCount="9" >
+    android:rowCount="15" >
 
     <TextView
         android:id="@+id/textView1"
@@ -21,7 +21,6 @@
         android:layout_column="1"
         android:layout_gravity="center"
         android:layout_row="4"
-        
         android:text="White Wine"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -38,5 +37,20 @@
         android:layout_gravity="left|top"
         android:layout_row="3"
         android:text="" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="5"
+        android:src="@drawable/cheese_icon" />
+
+    <TextView
+        android:id="@+id/cheeseResultTextView"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:layout_row="5"
+        android:text="Cheese"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </GridLayout>

@@ -20,14 +20,12 @@ public class DinnerParty extends Party {
 		this.intensity = intensity;
 	}
 
-	@Override
 	public void calcBeers() {
 		
 			beers = 0;
 		
 	}
 
-	@Override
 	public void calcRedWine() {
 		int temp = (int) (numberOfGuests * intensity * REDWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
@@ -37,7 +35,6 @@ public class DinnerParty extends Party {
 		}
 	}
 
-	@Override
 	public void calcWhiteWine() {
 		int temp = (int) (numberOfGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {

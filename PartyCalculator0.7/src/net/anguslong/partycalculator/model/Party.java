@@ -23,19 +23,21 @@ public abstract class Party {
 	protected int redWine;
 	protected int whiteWine;
 		
-	// template method - TODO is this going to work for the food as well?
-	public final void calculateParty() {
-		calcBeers();
-		calcWhiteWine();
-		calcRedWine();
-		
-	}
+//	// template method - TODO is this going to work for the food as well?
+//	public final void calculateParty() {
+//		calcBeers();
+//		calcWhiteWine();
+//		calcRedWine();
+//		
+//	}
 	
-	// abstract algorithms to be overridden by subclasses
-	// TODO change these into methods with return values rather than void with side-effects
-	abstract void calcBeers();
-	abstract void calcRedWine();
-	abstract void calcWhiteWine();
+//
+//	// abstract algorithms to be overridden by subclasses
+//	// TODO change these into methods with return values rather than void with side-effects
+//	abstract void calcBeers();
+//	abstract void calcRedWine();
+//	abstract void calcWhiteWine();
+
 
 	
 	// getters and setters
@@ -71,18 +73,6 @@ public abstract class Party {
 		this.numberOfGuests = numberOfGuests;
 	}
 	
-	public int getBeers() {
-		return beers;
-	}
-
-	public int getRedWine() {
-		return redWine;
-	}
-
-	public int getWhiteWine() {
-		return whiteWine;
-	}
-
 	public double getIntensity() {
 		return intensity;
 	}

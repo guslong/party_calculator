@@ -14,17 +14,35 @@ public class PartyCalculatorResult extends Activity {
 	int numberOfMaleGuests;
 	int numberOfFemaleGuests;
 	int partyLength;
-	
+	int partyType;
 	
 	TextView beerResultTextView;
 	TextView redWineResultTextView;
 	TextView whiteWineResultTextView;
+	TextView cheeseResultTextView;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.result);
+		
+		// get the partyType from the Application "global" variable
+		partyType = ((PartyCalculatorApplication)getApplication()).getPartyType();
+		
+		// depending on the party type, launch the relevant activity
+		
+		switch (partyType) {
+		case Party.APERO:
+			setContentView(R.layout.result);
+			break;
+		case Party.FONDUE_PARTY:
+			setContentView(R.layout.result_fondue);
+			break;
+		default:
+			setContentView(R.layout.result);
+			
+		}
+		
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
@@ -61,14 +79,15 @@ public class PartyCalculatorResult extends Activity {
 		beerResultTextView = (TextView)findViewById(R.id.beerResultTextView);
 		redWineResultTextView = (TextView) findViewById(R.id.redWineResultTextView);
 		whiteWineResultTextView = (TextView) findViewById(R.id.whiteWineResultTextView);
+		cheeseResultTextView = (TextView) findViewById(R.id.cheeseResultTextView);
 
 		PartyFactory factory = new PartyFactory();
 		
-		// get the partyType from the Application "global" variable
-		int partyType = ((PartyCalculatorApplication)getApplication()).getPartyType();
+		
 
 		// get the intensity from the preferences
 		double intensity = ((PartyCalculatorApplication)getApplication()).getIntensity();
+			
 		
 		Party party = factory.createParty(partyType, partyLength,numberOfMaleGuests, 
 				numberOfFemaleGuests, intensity);
@@ -76,14 +95,30 @@ public class PartyCalculatorResult extends Activity {
 		Log.d(TAG, "Created party of type: " + party.toString());
 		Log.d(TAG, "Party intensity: " + party.getIntensity());
 		
+		// calculate the results
+		switch (partyType) {
+		case Party.BBQ_PARTY:
+			beerResultTextView.setText(String.valueOf(((Apero) party).getBeers()) + " bottles");
+			redWineResultTextView.setText(String.valueOf(((Apero) party).getRedWine())
+					+ " bottles");
+			whiteWineResultTextView.setText(String.valueOf(((Apero) party).getWhiteWine())
+					+ " bottles");
+			break;
+		case Party.FONDUE_PARTY:
+			whiteWineResultTextView.setText(String.valueOf(((FondueParty) party).getWhiteWine())
+					+ " bottles");
+			cheeseResultTextView.setText(String.valueOf(((FondueParty) party).getCheese()) + " grams");
 		
-		party.calculateParty();
-		// replace the text with the results
-		beerResultTextView.setText(String.valueOf(party.getBeers()) + " bottles");
-		redWineResultTextView.setText(String.valueOf(party.getRedWine())
-				+ " bottles");
-		whiteWineResultTextView.setText(String.valueOf(party.getWhiteWine())
-				+ " bottles");
+			break;
+		default:
+			beerResultTextView.setText(String.valueOf(((Apero) party).getBeers()) + " bottles");
+			redWineResultTextView.setText(String.valueOf(((Apero) party).getRedWine())
+					+ " bottles");
+			whiteWineResultTextView.setText(String.valueOf(((Apero) party).getWhiteWine())
+					+ " bottles");
+		}
+		
+
 
 	}
 

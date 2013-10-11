@@ -17,44 +17,24 @@ public class FondueParty extends Party {
 		this.intensity = intensity;
 	}
 	
-	@Override
-	public void calcBeers() {
-		int temp = (int) (numberOfMaleGuests * intensity * BEER_FACTOR * getPartyLength());
-		if (temp > 1) {
-			beers = temp;
-		} else {
-			beers = 0;
-		}
-	}
 
-	@Override
-	public void calcRedWine() {
-		int temp = (int) (numberOfFemaleGuests * intensity * REDWINE_FACTOR * getPartyLength());
-		if (temp > 1) {
-			redWine = temp;
-		} else {
-			redWine = 0;
-		}
-	}
-
-	@Override
-	public void calcWhiteWine() {
+	public int getWhiteWine() {
 
 		int temp = (int) (numberOfGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
-			whiteWine = temp;
+			return temp;
 		} else {
-			whiteWine = 1;
+			return 1;
 		}
 	}
 	
-	public void calcCheese() {
+	public int getCheese() {
 
 		int temp = (int) (numberOfGuests * CHEESE_FACTOR);
 		if (temp > 1) {
-			cheese = temp;
+			return temp;
 		} else {
-			cheese = 1;
+			return 1;
 		}
 	}
 	
