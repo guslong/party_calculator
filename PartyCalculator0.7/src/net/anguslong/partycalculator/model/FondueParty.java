@@ -7,8 +7,6 @@ public class FondueParty extends Party {
 	private static final double WHITEWINE_FACTOR = 0.3;
 	private static final double CHEESE_FACTOR = 175; // in grams of cheese
 	
-	private int cheese;
-	
 	public FondueParty (int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
 		this.numberOfMaleGuests = numMale;
