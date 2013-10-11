@@ -220,9 +220,6 @@ public class Main extends Activity {
 		// show the Dialog
 		choicesDialog.show();
 
-		// reset the party input
-		resetInput();
-		
 	}
 
 	public void resetInput() {
