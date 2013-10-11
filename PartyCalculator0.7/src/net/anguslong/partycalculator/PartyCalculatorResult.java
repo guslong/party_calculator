@@ -26,6 +26,8 @@ public class PartyCalculatorResult extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// get the extras bundle
 		Bundle input = this.getIntent().getExtras();
 		

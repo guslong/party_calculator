@@ -1,20 +1,13 @@
 package net.anguslong.partycalculator;
 
-import net.anguslong.partycalculator.R.id;
-import net.anguslong.partycalculator.model.Party;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,6 +50,7 @@ public class Main extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		
 		setContentView(R.layout.main);
 
@@ -145,7 +139,8 @@ public class Main extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu, menu);
-		return true;
+		return super.onCreateOptionsMenu(menu);
+
 	}
 
 	@Override

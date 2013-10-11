@@ -23,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="net.anguslong.partycalculator.PartyCalculatorResult" >
+        <activity android:name="net.anguslong.partycalculator.PartyCalculatorResult"
+            android:parentActivityName="net.anguslong.partycalculator.Main" >
         </activity>
         <activity android:name="net.anguslong.partycalculator.PrefsActivity" >
         </activity>
