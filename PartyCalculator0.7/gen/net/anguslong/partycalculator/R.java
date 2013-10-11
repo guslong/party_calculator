@@ -26,9 +26,10 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int red_wine=0x7f020001;
-        public static final int white_wine=0x7f020002;
+        public static final int beer_bottle=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int red_wine=0x7f020002;
+        public static final int white_wine=0x7f020003;
     }
     public static final class id {
         public static final int beerResultTextView=0x7f0a000c;
@@ -42,9 +43,10 @@ public final class R {
         public static final int partyLengthEditText=0x7f0a000e;
         public static final int partyLengthSeekBar=0x7f0a000d;
         public static final int redWineResultTextView=0x7f0a0013;
-        public static final int sel_party_type=0x7f0a0017;
-        public static final int sel_reset=0x7f0a0018;
-        public static final int sel_settings=0x7f0a0019;
+        public static final int sel_party_type=0x7f0a0018;
+        public static final int sel_reset=0x7f0a0019;
+        public static final int sel_settings=0x7f0a001a;
+        public static final int spacer=0x7f0a0017;
         public static final int tableRow1=0x7f0a0005;
         public static final int tableRow2=0x7f0a0008;
         public static final int tableRow3=0x7f0a000b;

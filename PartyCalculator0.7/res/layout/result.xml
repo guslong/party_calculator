@@ -2,15 +2,17 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="14dp"
+    android:layout_marginTop="14dp"
     android:columnCount="2"
-    android:rowCount="8" >
+    android:rowCount="9" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_column="0"
+        android:layout_columnSpan="2"
         android:layout_gravity="left|top"
         android:layout_row="0"
-        android:layout_columnSpan="2"
         android:text="Recommended amounts for your party:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -18,7 +20,7 @@
         android:id="@+id/beerResultTextView"
         android:layout_column="1"
         android:layout_gravity="center"
-        android:layout_row="3"
+        android:layout_row="4"
         android:text="Beer"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -26,7 +28,8 @@
         android:id="@+id/whiteWineResultTextView"
         android:layout_column="1"
         android:layout_gravity="center"
-        android:layout_row="6"
+        android:layout_row="7"
+        
         android:text="White Wine"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -34,7 +37,7 @@
         android:id="@+id/redWineResultTextView"
         android:layout_column="1"
         android:layout_gravity="center"
-        android:layout_row="4"
+        android:layout_row="5"
         android:text="Red Wine"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -42,21 +45,28 @@
         android:id="@+id/imageView3"
         android:layout_column="0"
         android:layout_gravity="center"
-        android:layout_row="6"
+        android:layout_row="7"
         android:src="@drawable/white_wine" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_column="0"
         android:layout_gravity="center_horizontal|top"
-        android:layout_row="4"
+        android:layout_row="5"
         android:src="@drawable/red_wine" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_column="0"
         android:layout_gravity="center_horizontal|top"
+        android:layout_row="4"
+        android:src="@drawable/beer_bottle" />
+
+    <TextView
+        android:id="@+id/spacer"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
         android:layout_row="3"
-        android:src="@drawable/ic_launcher" />
+        android:text="" />
 
 </GridLayout>
