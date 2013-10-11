@@ -1,5 +1,7 @@
 package net.anguslong.partycalculator;
 
+import net.anguslong.partycalculator.R.id;
+import net.anguslong.partycalculator.model.Party;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,11 +27,14 @@ public class Main extends Activity {
 	private static final String SAVED_PARTY_LENGTH = "SAVED_PARTY_LENGTH";
 	private static final String LOGGER = "PartyCalculatorLogger";
 
+	private int partyType;
+	
 	EditText maleGuestsEditText;
 	EditText femaleGuestsEditText;
 	EditText partyLengthEditText;
 
 	Button calculateButton;
+	Button partyTypeButton;
 
 	SeekBar partyLengthSeekBar;
 
@@ -46,6 +51,14 @@ public class Main extends Activity {
 		calculateButton = (Button) findViewById(R.id.calculateButton);
 		calculateButton.setOnClickListener(calculateButtonListener);
 
+		partyTypeButton = (Button) findViewById(R.id.buttonPartyType);
+		partyType = ((PartyCalculatorApplication) getApplication()).getPartyType();
+		// create a list with the possible choices from the model
+		final String[] partyChoices = getResources().getStringArray(
+						R.array.party_types);
+		partyTypeButton.setText(partyChoices[partyType-1]);	
+		
+		
 		partyLengthSeekBar = (SeekBar) findViewById(R.id.partyLengthSeekBar);
 		partyLengthSeekBar
 				.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
@@ -87,6 +100,8 @@ public class Main extends Activity {
 			Log.d(LOGGER, "restored saved state");
 		}
 	}
+
+	
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
