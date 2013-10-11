@@ -6,9 +6,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +26,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class Main extends Activity {
 
+	private static final String TAG = "Main";
 	private static final String SAVED_MALE = "SAVED_MALE";
 	private static final String SAVED_FEMALE = "SAVED_FEMALE";
 	private static final String SAVED_PARTY_LENGTH = "SAVED_PARTY_LENGTH";
@@ -37,10 +42,20 @@ public class Main extends Activity {
 	Button partyTypeButton;
 
 	SeekBar partyLengthSeekBar;
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.d(TAG, "OnResume called");
+	}
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.main);
 
 		// get references to the components
@@ -52,12 +67,15 @@ public class Main extends Activity {
 		calculateButton.setOnClickListener(calculateButtonListener);
 
 		partyTypeButton = (Button) findViewById(R.id.buttonPartyType);
-		partyType = ((PartyCalculatorApplication) getApplication()).getPartyType();
-		// create a list with the possible choices from the model
-		final String[] partyChoices = getResources().getStringArray(
-						R.array.party_types);
-		partyTypeButton.setText(partyChoices[partyType-1]);	
-		
+		setPartyTypeButton();	
+		partyTypeButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				showPartyOptionsDialog();
+				
+			}
+		});
 		
 		partyLengthSeekBar = (SeekBar) findViewById(R.id.partyLengthSeekBar);
 		partyLengthSeekBar
@@ -151,6 +169,18 @@ public class Main extends Activity {
 
 	}
 
+/**
+ * sets the partyTypeButton text based on the current party type in the Application class
+ */
+	private void setPartyTypeButton() {
+		partyType = ((PartyCalculatorApplication) getApplication()).getPartyType();
+		// create a list with the possible choices from the model
+		final String[] partyChoices = getResources().getStringArray(
+						R.array.party_types);
+		partyTypeButton.setText(partyChoices[partyType-1]);
+	}
+	
+	
 	private void showPartyOptionsDialog() {
 		// create a list with the possible choices from the model
 		final String[] partyChoices = getResources().getStringArray(
@@ -179,11 +209,20 @@ public class Main extends Activity {
 		// create an AlertDialog from the builder
 		AlertDialog choicesDialog = choicesBuilder.create();
 
+		choicesDialog.setOnDismissListener(new OnDismissListener() {
+			
+			@Override
+			public void onDismiss(DialogInterface dialog) {
+				recreate();
+				
+			}
+		});
 		// show the Dialog
 		choicesDialog.show();
 
 		// reset the party input
 		resetInput();
+		
 	}
 
 	public void resetInput() {
