@@ -22,7 +22,8 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingTop="14dp" >
 
         <TextView
             android:id="@+id/textView5"
@@ -41,68 +42,39 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
-    <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp" >
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".65"
-            android:text="@string/lblMaleGuests"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
+        
+<TableRow>
         <EditText
             android:id="@+id/maleGuestsEditText"
-            android:layout_width="0dp"
+            android:paddingTop="14dp"
             android:layout_height="wrap_content"
             android:layout_weight=".35"
-            android:ems="10"
-            android:inputType="number" >
+            android:hint="Enter no of male guests"
+            android:inputType="number"
+            android:ems="10">
 
             <requestFocus />
         </EditText>
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+<TableRow>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".65"
-            android:text="@string/lblFemaleGuests"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/femaleGuestsEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".35"
+        android:ems="10"
+        android:hint="Enter no of female guests"
+        android:inputType="number" />
 
-        <EditText
-            android:id="@+id/femaleGuestsEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".35"
-            android:ems="10"
-            android:inputType="number" />
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_weight="0" >
 
         <TextView
             android:id="@+id/beerResultTextView"
