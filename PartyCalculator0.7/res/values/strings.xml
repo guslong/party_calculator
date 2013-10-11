@@ -4,10 +4,11 @@
     <string name="app_name">Party Calculator</string>
     <string name="action_settings">Settings</string>
     <string name="lbl_settings">Settings</string>
+    <string name="lbl_info">About</string>
     <string name="hello_world">Hello world!</string>
     <string name="lblMaleGuests">No. of male guests:</string>
     <string name="lblFemaleGuests">No. of female guests:</string>
-    <string name="lblPartyLen">How long?</string>
+    <string name="lblPartyLen">Length:</string>
     <string name="btnCalculate">Calculate!</string>
     <string name="lblHours">hours</string>
     <string name="title_activity_party_calculator_result">PartyCalculatorResult</string>

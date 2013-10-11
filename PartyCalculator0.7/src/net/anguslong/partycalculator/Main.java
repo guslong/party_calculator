@@ -28,7 +28,7 @@ public class Main extends Activity {
 	private static final String LOGGER = "PartyCalculatorLogger";
 
 	private int partyType;
-	
+
 	EditText maleGuestsEditText;
 	EditText femaleGuestsEditText;
 	EditText partyLengthEditText;
@@ -37,7 +37,7 @@ public class Main extends Activity {
 	Button partyTypeButton;
 
 	SeekBar partyLengthSeekBar;
-	
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -45,12 +45,10 @@ public class Main extends Activity {
 		Log.d(TAG, "OnResume called");
 	}
 
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	
+
 		// set main.xml as the view for this activity
 		setContentView(R.layout.main);
 
@@ -63,16 +61,16 @@ public class Main extends Activity {
 		calculateButton.setOnClickListener(calculateButtonListener);
 
 		partyTypeButton = (Button) findViewById(R.id.buttonPartyType);
-		setPartyTypeButton();	
+		setPartyTypeButton();
 		partyTypeButton.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				showPartyOptionsDialog();
-				
+
 			}
 		});
-		
+
 		partyLengthSeekBar = (SeekBar) findViewById(R.id.partyLengthSeekBar);
 		partyLengthEditText.setText("1");
 		partyLengthSeekBar
@@ -116,8 +114,6 @@ public class Main extends Activity {
 		}
 	}
 
-	
-
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -148,13 +144,17 @@ public class Main extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		Intent intentPrefs = new Intent(Main.this, PrefsActivity.class);
-		
+
 		switch (item.getItemId()) {
-		case R.id.sel_reset:
-			resetInput();
-			return true;
 		case R.id.sel_settings:
-		   startActivity(intentPrefs);
+			startActivity(intentPrefs);
+			return true;
+			// puts a help icon which displays an activity showing the author's
+			// name
+		case R.id.sel_info:
+			Intent intent = new Intent(this, InfoScreen.class);
+			startActivity(intent);
+
 			return true;
 		default:
 			return false;
@@ -163,18 +163,19 @@ public class Main extends Activity {
 
 	}
 
-/**
- * sets the partyTypeButton text based on the current party type in the Application class
- */
+	/**
+	 * sets the partyTypeButton text based on the current party type in the
+	 * Application class
+	 */
 	private void setPartyTypeButton() {
-		partyType = ((PartyCalculatorApplication) getApplication()).getPartyType();
+		partyType = ((PartyCalculatorApplication) getApplication())
+				.getPartyType();
 		// create a list with the possible choices from the model
 		final String[] partyChoices = getResources().getStringArray(
-						R.array.party_types);
-		partyTypeButton.setText(partyChoices[partyType-1]);
+				R.array.party_types);
+		partyTypeButton.setText(partyChoices[partyType - 1]);
 	}
-	
-	
+
 	private void showPartyOptionsDialog() {
 		// create a list with the possible choices from the model
 		final String[] partyChoices = getResources().getStringArray(
@@ -204,11 +205,11 @@ public class Main extends Activity {
 		AlertDialog choicesDialog = choicesBuilder.create();
 
 		choicesDialog.setOnDismissListener(new OnDismissListener() {
-			
+
 			@Override
 			public void onDismiss(DialogInterface dialog) {
 				recreate();
-				
+
 			}
 		});
 		// show the Dialog
@@ -216,6 +217,11 @@ public class Main extends Activity {
 
 	}
 
+	/**
+	 * this is deprecated because I don't have any menu item anymore for this.
+	 * was quite pointless anyway
+	 */
+	@Deprecated
 	public void resetInput() {
 		maleGuestsEditText.setText("");
 		femaleGuestsEditText.setText("");
@@ -230,8 +236,7 @@ public class Main extends Activity {
 
 			// when the button is clicked, go to the Result Activity
 			Intent submit = new Intent(Main.this, PartyCalculatorResult.class);
-			
-			
+
 			// put the values from the fields into the extra bundle
 			submit.putExtra("male", maleGuestsEditText.getText().toString());
 			submit.putExtra("female", femaleGuestsEditText.getText().toString());
