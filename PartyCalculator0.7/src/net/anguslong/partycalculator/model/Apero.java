@@ -2,7 +2,7 @@ package net.anguslong.partycalculator.model;
 
 public class Apero extends Party {
 	
-	private static final double BEER_FACTOR = 0.5; 
+	private static final double BEER_FACTOR = 1; 
 	private static final double REDWINE_FACTOR = 0.3; 
 	private static final double WHITEWINE_FACTOR = 0.3;
 		

@@ -3,7 +3,7 @@ package net.anguslong.partycalculator.model;
 public class DinnerParty extends Party {
 	
 	
-	private static final double BEER_FACTOR = 0; // posh dinner parties have no beer
+	private static final double BEER_FACTOR = .2; // posh dinner parties have not so much beer
 	private static final double REDWINE_FACTOR = 0.66; //  but lots of red wine
 	private static final double WHITEWINE_FACTOR = 0.1; // someone always has the fish, or white with the starter
 	

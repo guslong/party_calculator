@@ -79,7 +79,7 @@ public class PartyCalculatorResult extends Activity {
 		
 		party.calculateParty();
 		// replace the text with the results
-		beerResultTextView.setText(String.valueOf(party.getBeers()) + " cans");
+		beerResultTextView.setText(String.valueOf(party.getBeers()) + " bottles");
 		redWineResultTextView.setText(String.valueOf(party.getRedWine())
 				+ " bottles");
 		whiteWineResultTextView.setText(String.valueOf(party.getWhiteWine())

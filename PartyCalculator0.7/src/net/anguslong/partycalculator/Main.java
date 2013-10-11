@@ -74,6 +74,7 @@ public class Main extends Activity {
 		});
 		
 		partyLengthSeekBar = (SeekBar) findViewById(R.id.partyLengthSeekBar);
+		partyLengthEditText.setText("1");
 		partyLengthSeekBar
 				.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
