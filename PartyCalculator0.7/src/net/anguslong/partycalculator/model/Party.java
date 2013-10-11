@@ -6,7 +6,6 @@ public abstract class Party {
 	public static final int APERO = 1;
 	public static final int BBQ_PARTY = 2;
 	public static final int FONDUE_PARTY = 3;
-	public static final int DINNER_PARTY = 4;
 	
 	// constants for intensity
 	public static final double LOW_INTENSITY = 0.7;
@@ -22,22 +21,6 @@ public abstract class Party {
 	protected int beers;
 	protected int redWine;
 	protected int whiteWine;
-		
-//	// template method - TODO is this going to work for the food as well?
-//	public final void calculateParty() {
-//		calcBeers();
-//		calcWhiteWine();
-//		calcRedWine();
-//		
-//	}
-	
-//
-//	// abstract algorithms to be overridden by subclasses
-//	// TODO change these into methods with return values rather than void with side-effects
-//	abstract void calcBeers();
-//	abstract void calcRedWine();
-//	abstract void calcWhiteWine();
-
 
 	
 	// getters and setters

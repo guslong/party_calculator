@@ -21,7 +21,6 @@
         <item>Drinks only</item>
         <item>BBQ Party</item>
         <item>Fondue Party</item>
-        <item>Dinner Party</item>
     </string-array>
 
     <string name="lbl_reset">Reset</string>
