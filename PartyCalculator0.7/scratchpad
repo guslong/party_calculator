@@ -1,4 +1,9 @@
-
+MAIN TO DO
+  
+show the party type on the main activity screen
+ 1. text 
+ 2. cool icons
+ 
    		
 OTHER TO DO
 take current weather into account
@@ -8,6 +13,8 @@ add food suggestions for each party type
 	a) simple food suggestions at first
 	b) complex food suggestions based on number of people
 
+cleanup the LINT warnings
+
 
 better coupling between party types / less duplication of code
 	refactor with Strategy Pattern? (exchange algortyhms at runtime)
@@ -16,5 +23,5 @@ better coupling between party types / less duplication of code
 change the party methods to have return types rather than void with side-effects??
   simplify the methods in fondue party also as beer and redwine methods simply return 0
   
-  
-show the party type on the main activity screen
+
+maybe different result screens for the different parties
