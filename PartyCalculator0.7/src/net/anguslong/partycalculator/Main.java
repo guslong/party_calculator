@@ -50,8 +50,8 @@ public class Main extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		
+	
+		// set main.xml as the view for this activity
 		setContentView(R.layout.main);
 
 		// get references to the components
@@ -150,10 +150,6 @@ public class Main extends Activity {
 		Intent intentPrefs = new Intent(Main.this, PrefsActivity.class);
 		
 		switch (item.getItemId()) {
-		case R.id.sel_party_type:
-			// launch a AlertDialog with the party type choices
-			showPartyOptionsDialog();
-			return true;
 		case R.id.sel_reset:
 			resetInput();
 			return true;

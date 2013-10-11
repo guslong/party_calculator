@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/sel_party_type"
-        android:title="@string/sel_party_type">
-    </item>
-    <item
         android:id="@+id/sel_reset"
-        android:title="@string/lbl_reset">
+        android:title="@string/lbl_reset"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:showAsAction="ifRoom|withText">
     </item>
     <item
         android:id="@+id/sel_settings"
-        android:title="@string/lbl_settings">
+        android:title="@string/lbl_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="ifRoom|withText">
     </item>
 
 </menu>
