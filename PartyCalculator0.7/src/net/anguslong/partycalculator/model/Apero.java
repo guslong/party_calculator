@@ -42,7 +42,7 @@ public class Apero extends Party {
 	}
 
 	public String toString() {
-		return "Apero";
+		return "Drinks only";
 	}
 
 }

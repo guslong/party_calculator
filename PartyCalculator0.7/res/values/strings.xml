@@ -18,7 +18,7 @@
     <string name="party_type_button_text">CurrParty</string>
 
     <string-array name="party_types">
-        <item>Apero</item>
+        <item>Drinks only</item>
         <item>BBQ Party</item>
         <item>Fondue Party</item>
         <item>Dinner Party</item>

@@ -20,6 +20,7 @@ public class PartyCalculatorResult extends Activity {
 	TextView redWineResultTextView;
 	TextView whiteWineResultTextView;
 	TextView cheeseResultTextView;
+	TextView meatResultTextView;
 	
 	
 	@Override
@@ -32,8 +33,8 @@ public class PartyCalculatorResult extends Activity {
 		// depending on the party type, launch the relevant activity
 		
 		switch (partyType) {
-		case Party.APERO:
-			setContentView(R.layout.result);
+		case Party.BBQ_PARTY:
+			setContentView(R.layout.result_bbq);
 			break;
 		case Party.FONDUE_PARTY:
 			setContentView(R.layout.result_fondue);
@@ -80,7 +81,7 @@ public class PartyCalculatorResult extends Activity {
 		redWineResultTextView = (TextView) findViewById(R.id.redWineResultTextView);
 		whiteWineResultTextView = (TextView) findViewById(R.id.whiteWineResultTextView);
 		cheeseResultTextView = (TextView) findViewById(R.id.cheeseResultTextView);
-
+		meatResultTextView = (TextView) findViewById(R.id.meatResultTextView);
 		PartyFactory factory = new PartyFactory();
 		
 		
@@ -98,11 +99,12 @@ public class PartyCalculatorResult extends Activity {
 		// calculate the results
 		switch (partyType) {
 		case Party.BBQ_PARTY:
-			beerResultTextView.setText(String.valueOf(((Apero) party).getBeers()) + " bottles");
-			redWineResultTextView.setText(String.valueOf(((Apero) party).getRedWine())
+			beerResultTextView.setText(String.valueOf(((BBQParty) party).getBeers()) + " bottles");
+			redWineResultTextView.setText(String.valueOf(((BBQParty) party).getRedWine())
 					+ " bottles");
-			whiteWineResultTextView.setText(String.valueOf(((Apero) party).getWhiteWine())
+			whiteWineResultTextView.setText(String.valueOf(((BBQParty) party).getWhiteWine())
 					+ " bottles");
+			meatResultTextView.setText(String.valueOf(((BBQParty) party).getMeat()) + " grams");
 			break;
 		case Party.FONDUE_PARTY:
 			whiteWineResultTextView.setText(String.valueOf(((FondueParty) party).getWhiteWine())
