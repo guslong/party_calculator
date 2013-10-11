@@ -11,9 +11,11 @@
     <string name="btnCalculate">Calculate!</string>
     <string name="lblHours">hours</string>
     <string name="title_activity_party_calculator_result">PartyCalculatorResult</string>
-    <string name="intro_text">The party calculator will work out how much drink and food to buy for your party. Use the menu to change the party type.</string>
+    <string name="intro_text">The party calculator will work out how much drink and food to buy for your party.</string>
     <string name="sel_party_type">Change party type</string>
     <string name="choices_title">Select party type</string>
+    <string name="party_type_text">Current party type: </string>
+    <string name="party_type_button_text">CurrParty</string>
 
     <string-array name="party_types">
         <item>Apero</item>
