@@ -6,8 +6,7 @@ package net.anguslong.partycalculator.model;
  *
  */
 public class BBQParty extends Party {
-	
-	
+		
 	private static final double BEER_FACTOR = 1;
 	private static final double REDWINE_FACTOR = .2;
 	private static final double WHITEWINE_FACTOR = 0.07;

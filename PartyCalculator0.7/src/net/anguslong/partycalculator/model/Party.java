@@ -1,5 +1,10 @@
 package net.anguslong.partycalculator.model;
 
+/**
+ * base class for all party types
+ * @author anguslong
+ *
+ */
 public abstract class Party {
 
 	// constants for the party types: note, must keep in order with the strings.xml array
@@ -17,11 +22,6 @@ public abstract class Party {
 	protected int numberOfMaleGuests;
 	protected int numberOfFemaleGuests;
 	protected int numberOfGuests;
-
-	protected int beers;
-	protected int redWine;
-	protected int whiteWine;
-
 	
 	// getters and setters
 	public int getPartyLength() {

@@ -5,7 +5,7 @@ public class FondueParty extends Party {
 	private static final double BEER_FACTOR = 0; // no beer at a fondue party
 	private static final double REDWINE_FACTOR = 0; // no red wine at a fondue party
 	private static final double WHITEWINE_FACTOR = 0.3;
-	private static final double CHEESE_FACTOR = 125; // in grams of cheese
+	private static final double CHEESE_FACTOR = 175; // in grams of cheese
 	
 	private int cheese;
 	
