@@ -28,7 +28,7 @@ public abstract class Party {
 		calcBeers();
 		calcWhiteWine();
 		calcRedWine();
-
+		
 	}
 	
 	// abstract algorithms to be overridden by subclasses

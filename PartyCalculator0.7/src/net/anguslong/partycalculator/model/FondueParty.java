@@ -5,7 +5,9 @@ public class FondueParty extends Party {
 	private static final double BEER_FACTOR = 0; // no beer at a fondue party
 	private static final double REDWINE_FACTOR = 0; // no red wine at a fondue party
 	private static final double WHITEWINE_FACTOR = 0.3;
+	private static final double CHEESE_FACTOR = 125; // in grams of cheese
 	
+	private int cheese;
 	
 	public FondueParty (int duration, int numMale, int numFemale, double intensity) {
 		this.partyLength = duration;
@@ -37,12 +39,22 @@ public class FondueParty extends Party {
 
 	@Override
 	public void calcWhiteWine() {
-		// in a fondue party, both male and female drink white wine at a rate of 2 glasses per hour each
+
 		int temp = (int) (numberOfGuests * intensity * WHITEWINE_FACTOR * getPartyLength());
 		if (temp > 1) {
 			whiteWine = temp;
 		} else {
 			whiteWine = 1;
+		}
+	}
+	
+	public void calcCheese() {
+
+		int temp = (int) (numberOfGuests * CHEESE_FACTOR);
+		if (temp > 1) {
+			cheese = temp;
+		} else {
+			cheese = 1;
 		}
 	}
 	

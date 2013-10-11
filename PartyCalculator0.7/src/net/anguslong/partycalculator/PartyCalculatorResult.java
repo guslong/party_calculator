@@ -84,6 +84,7 @@ public class PartyCalculatorResult extends Activity {
 				+ " bottles");
 		whiteWineResultTextView.setText(String.valueOf(party.getWhiteWine())
 				+ " bottles");
+
 	}
 
 
